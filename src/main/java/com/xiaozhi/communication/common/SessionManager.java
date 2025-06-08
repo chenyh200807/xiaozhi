@@ -423,12 +423,13 @@ public class SessionManager {
     }
 
     /**
-     * 设备状态
-     * 
-     * @param mode  设备状态 auto/realTime
+     * 设置会话的工作模式
+     *
+     * @param sessionId 会话ID
+     * @param mode      设备状态 auto/realTime
      */
-    public void setMode(String mode) {
-        ChatSession chatSession = sessions.get(mode);
+    public void setMode(String sessionId, String mode) {
+        ChatSession chatSession = sessions.get(sessionId);
         if (chatSession != null) {
             chatSession.setMode(mode);
         }

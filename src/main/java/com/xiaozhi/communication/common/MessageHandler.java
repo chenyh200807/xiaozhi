@@ -337,7 +337,7 @@ public class MessageHandler {
         String mode = jsonNode.path("mode").asText();
 
         logger.info("收到listen消息 - SessionId: {}, State: {}, Mode: {}", sessionId, state, mode);
-        sessionManager.setMode(mode);
+        sessionManager.setMode(sessionId, mode);
 
         // 根据state处理不同的监听状态
         switch (state) {
